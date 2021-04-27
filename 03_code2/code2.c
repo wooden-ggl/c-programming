@@ -30,9 +30,9 @@ int main(void) {
   //then call printTriangle, passing in 7, and assign the result to numStars
   numStars = printTriangle(7);
   //finally, print "That triangle had %d total stars\n", such that the %d 
-  printf("That triangle had %d total starts\n",numStars);
+  printf("That triangle had %d total stars\n",numStars);
   //prints the value of numStars  
-  return 0;
+  return numStars;
 }
 
 
