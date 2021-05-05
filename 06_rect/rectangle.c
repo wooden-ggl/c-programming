@@ -31,59 +31,35 @@ rectangle canonicalize(rectangle r) {
   myRect.width = r.width;
   myRect.height = r.height;
   if (myRect.width <0){
-    myRect.width = -myRect.width;
-    myRect.x = (myRect.x + myRect.width);
+    myRect.width = (myRect.width * (-1));
+    myRect.x = (myRect.x - myRect.width);
   }
   if(myRect.height < 0){
-    myRect.height = -myRect.height;
-    myRect.y = (myRect.y +myRect.height);
+    myRect.height = (myRect.height * (-1));
+    myRect.y = (myRect.y - myRect.height);
   } 
-  return r;
+  return myRect;
 }
 
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
-  rectangle ans;
+  rectangle ans, ans1, ans2;
+  ans1.x = max(r1.x, r2.x);
+  ans1.y = max(r1.y, r2.y);
+
+  ans2.x = min(r1.x+r1.width, r2.x+r2.width);
+  ans2.y = min(r1.y+r1.height, r2.y+r2.height);
   
-  int max_width_1 = r1.x + r1.width;
-  int max_height_1 = r1.height +r1.y;
-  int max_width_2 = r2.x + r2.width;
-  int max_height_2 = r2.height + r2.y;
-  
-  if (r1.x == r2.x && r1.y == r2.y && r1.width == r2.width && r1.height == r2.height){
-    return r1;
-  }else if ((r2.y + r2.height) < r1.y || (r1.y +r1.height) < r2.y){
-    ans.height = 0;
-  }else if ((r1.x +r1.width) < r2.x || (r2.x + r2.width) < r1.y){
+  if (ans2.x >= ans1.x && ans2.y >= ans1.y){
+    ans.x = ans1.x;
+    ans.y = ans1.y;
+    ans.width = ans2.x - ans1.x;
+    ans.height = ans2.y-ans1.y;
+  }else{
     ans.width = 0;
-  }else if ((((r1.x + r2.width) > r2.x && r1.x < r2.x)&&(((r1.y + r1.height) > r2.y)&& r1.y < r2.y))||
-	    ((((r2.x + r2.width) > r1.x) && r2.x < r1.x)&&((r2.y + r2.height > r1.y)&&r2.y < r1.y))){
-    int min_w = min(max_width_1, max_width_2);
-    int min_h = min(max_height_2, max_height_1);
-    ans.x = min_w;
-    ans.y = min(r1.y, r2.y);
-    ans.width = (max(r1.x, r2.x) - ans.x);
-    ans.height = (min_h - ans.y);
-	  if (ans.width < 0){
-	     ans.width = ans.width * (-1);
-	   }
-	  if (ans.height <0){
-	     ans.height = ans.height * (-1);
-      	  }
-		  }
-    else if((r1.x < r2.x && r1.y < r2.y && (r1.x +r1.width < r2.x + r2.width) && (r1.y+r1.height < r2.y + r2.height))||
-      (r2.x < r1.x && r2.y < r1.y && (r2.x +r2.width < r1.x + r1.width ) && (r2.y + r2.height < r1.y + r1.height))){
-      ans.x = max(r1.x, r2.x);
-      ans.y = max(r1.y, r2.y);
-      ans.width = min(max_width_1, max_width_2);
-      ans.height = min(max_height_1, max_height_2);
-      if (ans.width <0){
-	ans.width = ans.width * (-1);
-      }
-      if (ans.height < 0){
-	ans.height = ans.height * (-1);
-      }
-    }
+    ans.height = 0;
+  }
+  
     return ans;
   }
       
