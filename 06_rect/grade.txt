@@ -1,15 +1,11 @@
-Grading at Wed May  5 06:26:45 UTC 2021
+Grading at Wed May  5 08:09:14 UTC 2021
 Attempting to compile rectangle.c
 Tring to run rectangle
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
 Line_6_did_not_match
 Line_7_did_not_match
 Line_9_did_not_match
 Line_10_did_not_match
 Line_11_did_not_match
-Line_12_did_not_match
 Line_13_did_not_match
 Line_14_did_not_match
 Line_15_did_not_match
@@ -19,24 +15,24 @@ Line_20_did_not_match
 Your file did not match the expected ouput
 Your output did not match what we expected. Here is what you printed
 r1 is (2,3) to (7,9)
-r2 is (4,5) to (-1,-2)
-r3 is (-2,7) to (5,-3)
-r4 is (0,7) to (-4,9)
+r2 is (-1,-2) to (4,5)
+r3 is (-2,-3) to (5,7)
+r4 is (-4,7) to (0,9)
 intersection(r1,r1): (2,3) to (7,9)
-intersection(r1,r2): (2,3) to (7,3)
-intersection(r1,r3): (2,3) to (7,3)
+intersection(r1,r2): <empty>
+intersection(r1,r3): <empty>
 intersection(r1,r4): <empty>
 intersection(r2,r1): <empty>
-intersection(r2,r2): (4,5) to (-1,-2)
-intersection(r2,r3): (4,5) to (-1,5)
-intersection(r2,r4): (4,5) to (-1,5)
-intersection(r3,r1): (4,5) to (-1,5)
-intersection(r3,r2): (4,5) to (-1,5)
-intersection(r3,r3): (-2,7) to (5,-3)
-intersection(r3,r4): (-2,7) to (5,7)
+intersection(r2,r2): <empty>
+intersection(r2,r3): <empty>
+intersection(r2,r4): <empty>
+intersection(r3,r1): <empty>
+intersection(r3,r2): <empty>
+intersection(r3,r3): <empty>
+intersection(r3,r4): <empty>
 intersection(r4,r1): <empty>
 intersection(r4,r2): <empty>
 intersection(r4,r3): <empty>
-intersection(r4,r4): (0,7) to (-4,9)
+intersection(r4,r4): <empty>
 
 Overall Grade: F
