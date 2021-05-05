@@ -88,23 +88,23 @@ int main (void) {
   printf("r1 is ");
   printRectangle(r1);
 
-  r2.x = 4;
-  r2.y = 5;
-  r2.width = -5;
-  r2.height = -7;
+  r2.x = -1;
+  r2.y = -2;
+  r2.width = 5;
+  r2.height = 7;
   printf("r2 is ");
   printRectangle(r2);
   
   r3.x = -2;
-  r3.y = 7;
+  r3.y = -3;
   r3.width = 7;
-  r3.height = -10;
+  r3.height = 10;
   printf("r3 is ");
   printRectangle(r3);
 
-  r4.x = 0;
+  r4.x = -4;
   r4.y = 7;
-  r4.width = -4;
+  r4.width = 4;
   r4.height = 2;
   printf("r4 is ");
   printRectangle(r4);
