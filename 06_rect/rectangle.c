@@ -31,11 +31,11 @@ rectangle canonicalize(rectangle r) {
   myRect.width = r.width;
   myRect.height = r.height;
   if (myRect.width <0){
-    myRect.width = (myRect.width * (-1));
+    myRect.width = -myRect.width;
     myRect.x = (myRect.x + myRect.width);
-  }else{}
+  }
   if(myRect.height < 0){
-    myRect.height = (myRect.height * (-1));
+    myRect.height = -myRect.height;
     myRect.y = (myRect.y +myRect.height);
   } 
   return r;
@@ -44,6 +44,7 @@ rectangle canonicalize(rectangle r) {
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
   rectangle ans;
+  
   int max_width_1 = r1.x + r1.width;
   int max_height_1 = r1.height +r1.y;
   int max_width_2 = r2.x + r2.width;
@@ -51,7 +52,7 @@ rectangle intersection(rectangle r1, rectangle r2) {
   
   if (r1.x == r2.x && r1.y == r2.y && r1.width == r2.width && r1.height == r2.height){
     return r1;
-  }else if ((r2.y +r2.height) < r1.y || (r1.y +r1.height) < r2.y){
+  }else if ((r2.y + r2.height) < r1.y || (r1.y +r1.height) < r2.y){
     ans.height = 0;
   }else if ((r1.x +r1.width) < r2.x || (r2.x + r2.width) < r1.y){
     ans.width = 0;
